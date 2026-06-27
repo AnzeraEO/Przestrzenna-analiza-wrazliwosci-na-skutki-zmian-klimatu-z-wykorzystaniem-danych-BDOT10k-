@@ -30,6 +30,7 @@ Repozytorium przedtawia przykład work-flow zautomatyzowanej analizy wrażliwoś
 3. Warstwy wsadowe przecięto względem siatki za pomocą narzędzia Intersect.
 4. Obliczono powierzchnię każdej z klas pokrycia terenu oraz udział procentowy danej klasy w komórce siatki za pomocą wyrażenia: overlay_intersects( @rodzaj pokrycia terenu , $area*100, limit:=1, sort_by_intersection_size:='des')[0] / "atrybut powierzchni siatki" / 10000 (dla obiektów poligonowych) overlay_intersects( @rodzaj pokrycia terenu,  $length , limit:=1, sort_by_intersection_size:='des')[0] (dla obiektów liniowych)
 5. Ostatnim etapem analizy jest wskazanie klas wrażliwości dla danej komórki siatki w zależności od rodzaju i udziału procentowego pokrycia terenu - gdzie 1 oznacza najniższą wrażliwość, a 4 najwyższą:
+
 CASE
 
   WHEN "obiekty_ochrony_zdrowia" >= 1 OR "obiekty_administracji_publicznej" >= 1 OR "obiekty_infr_transportowej" >= 1 OR "zabytki" >= 1 OR 
