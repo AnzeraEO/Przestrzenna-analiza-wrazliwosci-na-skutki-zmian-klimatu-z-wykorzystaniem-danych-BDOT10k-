@@ -26,7 +26,7 @@ Repozytorium przedstawia przykład workflow zautomatyzowanej analizy wrażliwoś
   - Budynki, budowle i urządzenia:
     - inne urządzenie techniczne (BUIT)
   - Dodatkowo z warstwy Budynki wyodrębiono pojędyjne obiekty związane z ochroną zdrowia (szpitale, przychodnie), służbami ratunkowymi, kluczowymi obiektami infrastruktury transportowej oraz obiekty związane z administracją publiczną.
-2. Utworzono siatkę hekasgonalną 200m (siatka powinna być odpowiednia względem powierzchni miasta). Siatka została docięta do granicy miasta oraz dodano kolumnę z powierzchnią każdego heksagonu.
+2. Utworzono siatkę kwadratów o wielkości oczka 200x200m (siatka powinna być odpowiednia względem powierzchni miasta). Siatka została docięta do granicy miasta oraz dodano kolumnę z powierzchnią każdej komórki siatki.
 3. Warstwy wsadowe przecięto względem siatki za pomocą narzędzia Intersect.
 4. Obliczono powierzchnię każdej z klas pokrycia terenu oraz udział procentowy danej klasy w komórce siatki za pomocą wyrażenia: overlay_intersects( @rodzaj pokrycia terenu , $area*100, limit:=1, sort_by_intersection_size:='des')[0] / "atrybut powierzchni siatki" / 10000 (dla obiektów poligonowych) overlay_intersects( @rodzaj pokrycia terenu,  $length , limit:=1, sort_by_intersection_size:='des')[0] (dla obiektów liniowych)
 5. Ostatnim etapem analizy jest przypisanie (za pomocą wyrażenia) klas wrażliwości dla danej komórki siatki w zależności od rodzaju i udziału procentowego pokrycia terenu - gdzie 1 oznacza najniższą wrażliwość, a 4 najwyższą:
